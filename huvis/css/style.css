@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  font-size: 16px;
+  font-weight: 500;
+}
+header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 9999;
+  transition: 0s;
+}
+header.on {
+  height: 400px;
+  background: white;
+  transition: 0.5s;
+}
+header.on::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  top: 100px;
+  left: 0;
+}
+header .head {
+  position: relative;
+  width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head .main {
+  display: flex;
+}
+header .head .main .menu {
+  display: flex;
+}
+header .head .main .menu > li {
+  position: relative;
+  line-height: 80px;
+  text-align: center;
+}
+header .head .main .menu > li :hover {
+  background: #002957;
+}
+header .head .main .menu > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 197px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 100px;
+}
+header .head .main .menu > li > a.on {
+  color: black;
+}
+header .head .main .menu > li:hover > a {
+  color: white;
+}
+header .head .main .icon {
+  display: flex;
+  line-height: 80px;
+}
+header .head .main .menu .sub {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0s;
+  z-index: 9999;
+}
+header .head .main .menu .sub.on {
+  opacity: 1;
+  height: auto;
+  transition: 0.5s;
+}
+header .head .main .menu .sub li {
+  line-height: 40px;
+  text-align: center;
+}
+header .head .main .menu .sub li a {
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: -0.5;
+}
+header .head .main .menu .sub li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 2px;
+}
+.icon {
+  box-sizing: border-box;
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+.icon a {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #002957;
+  font-size: 11px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.719);
+}
+.icon :nth-child(2) a {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon a:hover {
+  border: none;
+}
+section {
+  width: 100%;
+  height: 906px;
+}
+.main_banner {
+  width: 100%;
+  height: 906px;
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
