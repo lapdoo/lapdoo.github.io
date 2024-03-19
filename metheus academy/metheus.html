@@ -17,9 +17,27 @@
     <header>
       <div class="head">
         <ul class="menu">
-          <li><a href="#">메테우스아카데미</a></li>
+          <li>
+            <a href="#">메테우스아카데미</a>
+            <div class="sub">
+              <ul>
+                <li><a href="#">메테우스아카데미</a></li>
+                <li><a href="#">강사진소개</a></li>
+                <li><a href="#">아카데미 갤러리</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="#">과정</a></li>
-          <li><a href="#">고객센터</a></li>
+          <li>
+            <a href="#">고객센터</a>
+            <div class="sub">
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주하는 질문</a></li>
+                <li><a href="#">온라인 상담</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
         <div class="logo"></div>
         <div class="sub_menu">
@@ -29,26 +47,6 @@
             <li><a href="#">메테우스 자산운용</a></li>
             <div class="bar"></div>
           </ul>
-        </div>
-      </div>
-      <div class="lnb_wrap">
-        <div class="lnb">
-          <div class="sub">
-            <ul>
-              <li><a href="#">메테우스아카데미</a></li>
-              <li><a href="#">강사진소개</a></li>
-              <li><a href="#">아카데미 갤러리</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="lnb">
-          <div class="sub">
-            <ul>
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">자주하는 질문</a></li>
-              <li><a href="#">온라인 상담</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </header>
@@ -224,15 +222,56 @@
           <p>메테우스자산운용이 추천하는 분야별 과정을 확인하세요.</p>
         </div>
         <div class="class_btn">
-          <ul>
-            <li>주식</li>
-            <li>부동산</li>
-            <li>펀드</li>
-            <li>회계</li>
-            <li>리츠</li>
-            <li>법률</li>
-            <li>세무</li>
-          </ul>
+          <input
+            type="checkbox"
+            name="menu"
+            value="one"
+            onclick="getCheckboxValue()"
+          />
+          주식
+          <input
+            type="checkbox"
+            name="menu"
+            value="two"
+            onclick="getCheckboxValue()"
+          />
+          부동산
+          <input
+            type="checkbox"
+            name="menu"
+            value="three"
+            onclick="getCheckboxValue()"
+          />
+          펀드
+          <input
+            type="checkbox"
+            name="menu"
+            value="four"
+            onclick="getCheckboxValue()"
+          />
+          회계
+          <input
+            type="checkbox"
+            name="menu"
+            value="five"
+            onclick="getCheckboxValue()"
+          />
+          리츠
+          <input
+            type="checkbox"
+            name="menu"
+            value="six"
+            onclick="getCheckboxValue()"
+          />
+          법률
+          <input
+            type="checkbox"
+            name="menu"
+            value="seven"
+            onclick="getCheckboxValue()"
+          />
+          세무
+          <div id="result"></div>
           <div class="class_btn_show">
             <ul class="class_btn_list">
               <li>
@@ -323,16 +362,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

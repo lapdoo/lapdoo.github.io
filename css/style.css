@@ -1,15 +1,15 @@
 @charset "uft-8";
 @font-face {
   font-family: "Pally-Regular";
-  src: url("../../../webfonts/Pally-Regular.ttf") format("truetype");
+  src: url("../webfonts/Pally-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "Chillax-Medium";
-  src: url("../../../webfonts/Chillax-Medium.ttf") format("truetype");
+  src: url("../webfonts/Chillax-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "CabinetGrotesk-Medium";
-  src: url("../../../webfonts/CabinetGrotesk-Medium.ttf") format("truetype");
+  src: url("../webfonts/CabinetGrotesk-Medium.ttf") format("truetype");
 }
 * {
   margin: 0;
@@ -611,11 +611,19 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
+.slide_box1 img {
+  width: 445px;
+  height: 191px;
+}
 .slide_box2 {
   margin-top: 60px;
   display: grid;
   column-gap: 60px;
   grid-template-columns: repeat(3, 1fr);
+}
+.slide_box2 img {
+  width: 281px;
+  height: 388px;
 }
 .sec5 {
   width: 100%;
@@ -708,12 +716,12 @@
 }
 .img_txt h1 {
   font-size: 60px;
-  font-family: "Chillax-Medium", sans-serif;
+  font-family: "Chillax-Medium";
 }
 
 .swiper-slide:last-of-type .img_txt:last-of-type h1 {
   font-size: 40px;
-  font-family: "Chillax-Medium", sans-serif;
+  font-family: "Chillax-Medium";
 }
 .img_txt .view_hover {
   width: 120px;
