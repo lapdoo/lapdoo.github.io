@@ -31,6 +31,61 @@ var MainSwiper = new Swiper(".left_con .mySwiper2", {
     pauseOnMouseEnter: true,
   },
 });
+
+gsap.to(".txt_img", {
+  rotate: 70,
+  scrollTrigger: {
+    trigger: "#Scon",
+    scrub: true,
+    start: "-40%",
+    end: "100% 80%",
+  },
+});
+
+let txt = gsap.timeline();
+
+txt
+  .to(
+    ".bot_txt p:first-of-type",
+    {
+      y: 0,
+      opacity: 1,
+    },
+    "same"
+  )
+  .to(
+    ".bot_txt p:nth-of-type(2)",
+    {
+      y: 0,
+      opacity: 1,
+    },
+    "same"
+  )
+  .to(
+    ".bot_txt p:nth-of-type(3)",
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+    },
+    "same"
+  )
+  .to(
+    ".bot_txt p:last-of-type",
+    {
+      y: 0,
+      opacity: 1,
+    },
+    "same"
+  );
+ScrollTrigger.create({
+  animation: txt,
+  trigger: ".bot_con",
+  scrub: true,
+  start: "-70%",
+  end: "50% 80%",
+});
+
 var SubSwiper = new Swiper(".right_con .mySwiper2", {
   navigation: {
     nextEl: ".swiper-button-next",

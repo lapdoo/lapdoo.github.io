@@ -1,20 +1,46 @@
 @charset "utf-8";
 @font-face {
-  font-family: "Ivymode";
+  font-family: "Ivymode-T";
   src: url("../../webfonts/IvyMode-Thin.woff2") format("woff2"),
     url("../../webfonts/IvyMode-Thin.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "MaruBuri";
-  src: url("../../webfonts/MaruBuri-ExtraLight.ttf") format("truetype");
+  font-family: "Ivymode-R";
+  src: url("../../webfonts/IvyMode-Regular.woff2") format("woff2"),
+    url("../../webfonts/IvyMode-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: "VentiCF";
-  src: url("../../webfonts/VentiCF-Medium.ttf") format("truetype");
+  font-family: "MaruBuri";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-
+@font-face {
+  font-family: "VentiCF-Thin";
+  src: url("../../webfonts/VentiCF-Thin.woff") format("woff2"),
+    url("../../webfonts/VentiCF-Thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VentiCF-Medium";
+  src: url("../../webfonts/VentiCF-Medium.woff2") format("woff2"),
+    url("../../webfonts/VentiCF-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VentiCF-DemiBold";
+  src: url("../../webfonts/VentiCF-DemiBold.woff2") format("woff2"),
+    url("../../webfonts/VentiCF-DemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +51,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 header {
   position: absolute;
   left: 0;
@@ -100,7 +127,7 @@ label.container:hover .bar2 {
 }
 .ban_desc {
   position: absolute;
-  bottom: 170px;
+  bottom: 260px;
   width: 100%;
   z-index: 10;
   margin: 0 auto;
@@ -108,10 +135,9 @@ label.container:hover .bar2 {
 .text {
   width: 1450px;
   margin: 0 auto;
-  margin-bottom: 50px;
 }
 .text h2 {
-  font-family: "IvyMode", sans-serif;
+  font-family: "IvyMode-T", sans-serif;
   font-size: 80px;
   font-weight: 100;
   color: white;
@@ -124,7 +150,7 @@ label.container:hover .bar2 {
   justify-content: center;
 }
 .btn1 button {
-  font-family: "VentiCF", sans-serif;
+  font-family: "VentiCF-Medium", sans-serif;
   align-items: center;
   font-size: 16px;
   color: white;
@@ -173,17 +199,18 @@ label.container:hover .bar2 {
 }
 
 .img_slide {
-  width: 100vw;
+  margin-left: -80px;
+  width: 110vw;
   position: relative;
   transform: translateX(35vw);
 }
 #my .swiper {
-  width: 100%;
+  width: 110vw;
   height: 100%;
   z-index: 1;
 }
+
 #my .swiper-slide {
-  width: 100%;
   height: 953px;
   text-align: center;
   font-size: 18px;
@@ -191,12 +218,84 @@ label.container:hover .bar2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 1;
 }
 #my .swiper-slide > div {
   overflow: hidden;
 }
-#my .swiper-slide img {
+/* #my .swiper-slide img {
+  width: 100%;
+  height: 100%;
+} */
+.mySwiper .main_btn {
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  margin-left: -10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.mySwiper .main_btn .main_nav {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-family: "VentiCF-Medium";
+  font-size: 16px;
+}
+.mySwiper .main_btn .main_nav .swiper-button-prev::before {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: white;
+}
+.mySwiper .main_btn .main_nav .swiper-button-prev {
+  justify-content: start;
+  width: 100px;
+  color: white;
+}
+.mySwiper .main_btn .main_nav .swiper-button-next {
+  justify-content: end;
+  width: 100px;
+  color: white;
+}
+.mySwiper .main_btn .main_nav .swiper-button-prev::after {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: white;
+}
+
+.mySwiper .main_btn .main_nav .swiper-button-next::after {
+  display: none;
+}
+
+.mySwiper .main_btn .top_btnCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.mySwiper .main_btn .top_btnCircle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
 }
 .main_hover {
   width: 245px;
@@ -214,7 +313,7 @@ label.container:hover .bar2 {
   height: 100%;
   z-index: 9999;
   font-size: 30px;
-  font-family: "VentiCF", sans-serif;
+  font-family: "VentiCF-Medium", sans-serif;
   animation: rotate_txt 30s infinite linear;
 }
 @keyframes rotate_txt {
@@ -275,7 +374,7 @@ label.container:hover .bar2 {
 section {
   padding-top: 275px;
   width: 1450px;
-  height: 1500px;
+  height: 1600px;
   margin: 0 226.5px;
 }
 #Scon {
@@ -283,29 +382,35 @@ section {
   width: 1450px;
   height: 987px;
   margin: 0 auto;
-  padding: 210px 0;
+  padding: 260px 0;
+  overflow: hidden;
 }
-.innerWrap > h1 {
+.txt_img {
   position: absolute;
-  top: 350px;
-  right: 290px;
-  font-family: "IvyMode", sans-serif;
-  font-size: 40px;
-  font-weight: lighter;
+  top: 35%;
+  left: 50%;
+  width: 1594px;
+  height: 1458px;
+  z-index: 99;
+  transform: translate(-50%, -50%);
 }
-
+.txt_img img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-20deg);
+}
 .inner > P {
   position: absolute;
-  top: 250px;
-  left: 700px;
-  font-family: "VentiCF", sans-serif;
+  top: 28%;
+  left: 48%;
+  font-family: "VentiCF-DemiBold", sans-serif;
+  font-size: 12px;
   opacity: 0;
   transition: 1.5s;
 }
 .inner > P.on {
   opacity: 1;
 }
-
 .left_con {
   position: absolute;
   left: 115px;
@@ -334,16 +439,23 @@ section {
 .right_con {
   position: absolute;
   right: 115px;
-  bottom: 232px;
+  bottom: 100px;
   width: 495px;
-  height: 630px;
+  height: 987px;
   text-align: right;
   z-index: 10;
   overflow: hidden;
 }
+.right_con h1 {
+  margin: 60px 80px 70px 30px;
+  font-family: "IvyMode-T", sans-serif;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: left;
+}
 .right_con .swiper2 {
-  width: 100%;
-  height: 100%;
+  width: 495px;
+  height: 630px;
 }
 .right_con .swiper2 img {
   display: block;
@@ -351,17 +463,84 @@ section {
   height: 100%;
   object-fit: cover;
 }
-
+.mySwiper2 .scon_bnt {
+  width: 300px;
+  height: 50px;
+  position: absolute;
+  bottom: -350px;
+  left: 0;
+  z-index: 999;
+}
+.mySwiper2 .scon_bnt .left_nav {
+  justify-content: center;
+  display: flex;
+}
+.mySwiper2 .left_nav .swiper-button-prev {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.mySwiper2 .left_nav .swiper-button-prev::after,
+.mySwiper2 .left_nav .swiper-button-next::after {
+  display: none;
+}
+.mySwiper2 .left_nav .swiper-button-prev .nav_arrow {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  bottom: -8px;
+  background: black;
+  transform: rotate(50deg);
+}
+.mySwiper2 .left_nav .swiper-button-prev .nav_arrow2 {
+  position: absolute;
+  bottom: -1px;
+  width: 10px;
+  height: 1px;
+  background: black;
+  transform: rotate(-50deg);
+}
+.mySwiper2 .left_nav .swiper-button-next {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.mySwiper2 .left_nav .swiper-button-next .nav_arrow {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  bottom: -8px;
+  background: black;
+  transform: rotate(-50deg);
+}
+.mySwiper2 .left_nav .swiper-button-next .nav_arrow2 {
+  position: absolute;
+  bottom: -1px;
+  width: 10px;
+  height: 1px;
+  background: black;
+  transform: rotate(50deg);
+}
+.mySwiper2 .left_nav .btn_span_line {
+  width: 1px;
+  height: 24px;
+  margin: 0 20px;
+  background: black;
+}
+.mySwiper2 .left_nav .swiper-button-next {
+  width: 30px;
+  height: 30px;
+}
 #con {
   position: static !important;
 }
 .con_txt {
   margin-top: 60px;
 }
-.con_txt p {
+.con_txt h4 {
   font-size: 15px;
   font-family: "MaruBuri";
-  font-weight: 600;
+  font-weight: normal;
   white-space: nowrap;
   margin-bottom: 20px;
 }
@@ -383,7 +562,6 @@ section {
   justify-content: center;
   align-items: center;
 }
-
 .mov {
   position: relative;
   max-width: 435px;
@@ -403,12 +581,24 @@ section {
   overflow: hidden;
   transform: scale(1.05);
 }
+.mov img {
+  display: block;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .con2 {
+    height: 300px;
+  }
+  .con2 .mov {
+    max-width: 46vw;
+  }
+}
 .midle_con {
   width: 1450px;
   margin: 0 auto;
 }
 .midle_con .h_img_con {
-  line-height: 170px;
+  line-height: -30px;
   text-align: left;
   margin: 220px 0 250px 0;
   background: url(../images/main_txt_bg.jpg);
@@ -417,15 +607,15 @@ section {
   -webkit-background-clip: text;
 }
 .midle_con .h_img_con h2 {
-  font-family: "IvyMode", sans-serif;
+  font-family: "IvyMode-T", sans-serif;
   font-weight: 900;
-  font-size: 255px;
+  font-size: 13vw;
   letter-spacing: 15px;
 }
 .midle_con .h_img_con h4 {
-  font-family: "IvyMode", sans-serif;
+  font-family: "IvyMode-T", sans-serif;
   font-weight: 900;
-  font-size: 55px;
+  font-size: 50px;
   letter-spacing: 5px;
 }
 .bot_con {
@@ -433,6 +623,7 @@ section {
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
+  align-items: end;
   position: relative;
 }
 .bot_con .bot_txt {
@@ -444,20 +635,34 @@ section {
   transform: rotate(90deg);
   z-index: 10;
 }
-.bot_con .bot_txt p:first-of-type {
-  padding-bottom: 120px;
+.bot_con .bot_txt .grup .p_box {
+  width: 700px;
+  height: 90px;
+  overflow: hidden;
+}
+.bot_con .bot_txt .grup .p_box p {
+  transform: translateY(90px);
+  transition: 1.2s;
+}
+.bot_con .bot_txt .grup .p_box.on p {
+  transform: translateY(0);
+}
+.bot_con .bot_txt .grup:first-child {
+  margin-bottom: 120px;
+}
+.bot_con .bot_txt .grup:first-child p {
   letter-spacing: -2px;
+  font-family: "IvyMode-T", sans-serif;
   line-height: 90px;
   color: #ddcbbe;
   font-size: 96px;
-  font-family: "IvyMode", sans-serif;
 }
-.bot_con .bot_txt p:last-of-type {
+.bot_con .bot_txt .grup:last-child p {
   letter-spacing: -2px;
-  font-size: 96px;
+  font-family: "IvyMode-T", sans-serif;
   line-height: 90px;
   color: #bfa694;
-  font-family: "IvyMode", sans-serif;
+  font-size: 96px;
 }
 .BottomImg {
   position: relative;
@@ -475,6 +680,114 @@ section {
 .swiper3 .swiper-slide img {
   display: block;
   width: 100%;
+}
+.mySwiper3 .bottom_nav {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  width: 230px;
+  bottom: 25%;
+  right: -45%;
+}
+.mySwiper3 .bottom_nav .swiper-button-prev {
+  width: 65px;
+  display: flex;
+  justify-content: start;
+  height: 35px;
+  color: black;
+}
+.mySwiper3 .bottom_nav .swiper-button-prev::after {
+  display: none;
+}
+.mySwiper3 .bottom_nav .swiper-button-prev .prev_circle {
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.mySwiper3 .bottom_nav .swiper-button-prev .prev_arrow {
+  transform: translateX(-11px);
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+.mySwiper3 .bottom_nav .swiper-button-prev .prev_arrow_line {
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: -11px;
+  width: 8px;
+  height: 1px;
+  background: black;
+  transform: rotate(40deg);
+}
+.mySwiper3 .bottom_nav .swiper-button-prev .prev_arrow_line2 {
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: -11px;
+  width: 8px;
+  height: 1px;
+  background: black;
+  transform: rotate(-40deg);
+}
+.mySwiper3 .bottom_nav .swiper-button-prev .prev_line {
+  position: absolute;
+  top: 18.2px;
+  right: -1px;
+  width: 50px;
+  height: 1px;
+  background: black;
+}
+.mySwiper3 .bottom_nav .swiper-button-next {
+  width: 65px;
+  display: flex;
+  justify-content: start;
+  height: 35px;
+  color: black;
+}
+.mySwiper3 .bottom_nav .swiper-button-next::after {
+  display: none;
+}
+.mySwiper3 .bottom_nav .swiper-button-next .prev_circle {
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.mySwiper3 .bottom_nav .swiper-button-next .prev_arrow {
+  transform: translateX(-11px);
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+.mySwiper3 .bottom_nav .swiper-button-next .prev_arrow_line {
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: -11px;
+  width: 8px;
+  height: 1px;
+  background: black;
+  transform: rotate(-40deg);
+}
+.mySwiper3 .bottom_nav .swiper-button-next .prev_arrow_line2 {
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: -11px;
+  width: 8px;
+  height: 1px;
+  background: black;
+  transform: rotate(40deg);
+}
+.mySwiper3 .bottom_nav .swiper-button-next .prev_line {
+  position: absolute;
+  top: 18.2px;
+  right: 45px;
+  width: 50px;
+  height: 1px;
+  background: black;
 }
 .BottomImg img {
   width: 100%;
@@ -536,6 +849,8 @@ section {
 .btn_bot_txt {
   width: 23%;
   padding-left: 70px;
+  padding-top: 50px;
+  margin-bottom: 110px;
 }
 .btn_bot_txt .in_txt {
 }
@@ -559,6 +874,103 @@ section {
   text-wrap: wrap;
   font-weight: 500;
   line-height: 22px;
+}
+footer {
+  position: relative;
+  padding-top: 23%;
+  width: 100%;
+  overflow: hidden;
+}
+.last_con {
+  margin-left: -140px;
+  padding-top: 50px;
+  width: 120%;
+  height: 557px;
+  border-radius: 50% 50% 0 0;
+  background: #ddcbbe;
+}
+.last_con .Tracing {
+  position: absolute;
+  top: 250px;
+  right: 12%;
+  width: 449.1px;
+  height: 270px;
+}
+.last_con .Tracing a {
+  display: flex;
+  color: #ddcbbe;
+}
+.last_con .Tracing a .ft_txt {
+  margin-left: -80px;
+  line-height: 40px;
+}
+.last_con .Tracing a .ft_txt h4 {
+  font-family: "IvyMode-R";
+  font-size: 22px;
+}
+.last_con .Tracing a .ft_txt p {
+  font-family: "MaruBuri";
+  font-size: 14px;
+}
+.last_info {
+  font-family: "MaruBuri";
+  width: 1350px;
+  margin: 0 auto;
+  color: white;
+}
+.last_info .ft_logo {
+  margin: 0 auto;
+  width: 250px;
+}
+.last_info .ft_txt_flex {
+  margin-top: 150px;
+  margin-left: -70px;
+  display: flex;
+  justify-content: space-between;
+}
+.last_info .last_txt_one {
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.last_info .last_txt_one a {
+  margin-top: 10px;
+  color: white;
+  text-decoration: underline;
+}
+.last_info .last_txt_one span {
+  font-family: "pretendard";
+  font-weight: lighter;
+  margin-top: 50px;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.last_info .last_txt_one span img {
+  padding-left: 5px;
+  width: 25px;
+  height: 25px;
+}
+.last_info .last_txt_two {
+  margin-left: -20px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.last_info .last_txt_two .twoTxt_info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.last_info .last_txt_two .twoTxt_info p {
+  font-family: "VentiCF-Medium";
+  padding: 10px;
+}
+.last_info .last_txt_two .ft_icon {
+  margin-top: 120px;
+}
+.last_info .last_txt_two .ft_icon a {
+  padding: 10px;
 }
 @media screen and (max-width: 1280px) {
   .main {
