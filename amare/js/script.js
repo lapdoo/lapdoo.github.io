@@ -1,3 +1,11 @@
+$(window).on("scroll", function () {
+  if ($(window).scrollTop()) {
+    $(".hd_fixed").addClass("active");
+  } else {
+    $(".hd_fixed").removeClass("active");
+  }
+});
+
 var swiper = new Swiper(".mySwiper", {
   navigation: {
     nextEl: ".swiper-button-next",
