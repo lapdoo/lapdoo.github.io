@@ -41,7 +41,7 @@ function setFlowBanner() {
   const $list = $(".flow_banner .list");
   let wrapWidth = ""; //$wrap의 가로 크기
   let listWidth = ""; //$list의 가로 크기
-  const speed = 92; //1초에 몇픽셀 이동하는지 설정
+  const speed = 50; //1초에 몇픽셀 이동하는지 설정
 
   //리스트 복제
   let $clone = $list.clone();
@@ -107,29 +107,28 @@ $(".class_btn p").click(function () {
 
 let t = gsap.timeline({
   defaults: {
-    duration: 1,
+    duration: 2,
+    stagger: 3,
   },
 });
-t.from(
-  ".gsap_txt li span",
-  {
-    y: -200,
-    stagger: 2,
-  },
-  "same"
-).from(
-  ".gsap_txt li p",
-  {
+
+t.from(".gsap_txt li .Ttxt", {
+  y: -200,
+})
+  .from(".gsap_txt li p", {
     y: 200,
-    stagger: 2,
-  },
-  "same"
-);
+  })
+  .from(".gsap_txt li .R_line", {
+    y: -200,
+    height: 600,
+    stagger: 3,
+    duration: 1,
+  });
 ScrollTrigger.create({
   animation: t,
   trigger: ".head6",
   start: "top 50%",
-  end: "+=350",
+  end: "+=600",
   scrub: true,
   // markers: true,
   // pin: true,

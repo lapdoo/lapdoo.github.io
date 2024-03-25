@@ -26,7 +26,7 @@ function menu_out() {
   document.querySelector(".info").classList.remove("on");
 }
 gnb.forEach(function (value, index) {
-  value.onmouseenter = function () {
+  value.onmouseover = function () {
     menu_in();
   };
   value.onmouseleave = function () {

@@ -74,7 +74,7 @@ header {
   color: #fff;
 }
 
-.head.active .menu li a {
+.head.active .menu > li > a {
   font-weight: bold;
   font-size: 16px;
   color: #000000;
@@ -719,6 +719,7 @@ section {
   text-align: center;
 }
 .head6 .gsap_txt li {
+  position: relative;
   width: calc(100% / 6);
   font-size: 50px;
   font-weight: 500;
@@ -726,15 +727,17 @@ section {
 .head6 .gsap_txt li:first-of-type::before {
   display: none;
 }
-.head6 .gsap_txt li::before {
+.head6 .gsap_txt li .R_line {
   position: absolute;
-  content: "";
+  top: 0;
   display: block;
   width: 1px;
   height: 220px;
   background: #64636386;
+  transition: 1s;
 }
-.head6 .gsap_txt li span {
+
+.head6 .gsap_txt li .Ttxt {
   display: block;
   transition: 1s;
 }
@@ -742,7 +745,7 @@ section {
   color: #9b9999;
   /* width: 244.55px;*/
   padding-top: 100px;
-  transition: 1s;
+  transition: 2s;
 }
 .head7 {
   position: relative;
