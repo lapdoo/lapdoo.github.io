@@ -105,36 +105,48 @@ $(".class_btn p").click(function () {
   $(".class_btn_show ul").eq(i).css("display", "block");
 });
 
-let t = gsap.timeline({
-  defaults: {
-    duration: 2,
-    stagger: 3,
-  },
-});
-
-t.from(".gsap_txt li .Ttxt", {
-  y: -200,
-})
-  .from(".gsap_txt li p", {
-    y: 200,
-  })
-  .from(".gsap_txt li .R_line", {
-    y: -200,
-    height: 600,
-    stagger: 3,
-    duration: 1,
-  });
-ScrollTrigger.create({
-  animation: t,
-  trigger: ".head6",
-  start: "top 50%",
-  end: "+=600",
-  scrub: true,
-  // markers: true,
-  // pin: true,
-});
-
 $(".Topmove").click(function () {
   $("html, body").animate({ scrollTop: 0 }, 400);
   return false;
+});
+
+let Tani = gsap.timeline();
+
+Tani.fromTo(
+  ".up",
+  {
+    y: -200,
+    stagger: 1,
+  },
+  {
+    y: 0,
+    stagger: 1,
+  },
+  "same"
+)
+  .fromTo(
+    ".down",
+    {
+      y: 200,
+      stagger: 1,
+    },
+    {
+      y: 0,
+      stagger: 1,
+    },
+    "same"
+  )
+  .from(".R_line", {
+    y: -200,
+    height: 600,
+    stagger: 2,
+  });
+ScrollTrigger.create({
+  animation: Tani,
+  trigger: ".head6",
+  start: "top 30%",
+  end: "60% 50%",
+  scrub: 2,
+  markers: true,
+  // pin: true,
 });

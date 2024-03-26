@@ -732,20 +732,19 @@ section {
   top: 0;
   display: block;
   width: 1px;
-  height: 220px;
+  height: 180px;
   background: #64636386;
   transition: 1s;
 }
 
-.head6 .gsap_txt li .Ttxt {
-  display: block;
+.head6 .gsap_txt li .up {
   transition: 1s;
 }
-.head6 .gsap_txt li p {
+.head6 .gsap_txt li .down {
   color: #9b9999;
   /* width: 244.55px;*/
-  padding-top: 100px;
-  transition: 2s;
+  padding-top: 50px;
+  transition: 1s;
 }
 .head7 {
   position: relative;
