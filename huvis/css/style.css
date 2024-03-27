@@ -15,20 +15,49 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
+.menu_btn {
+  position: fixed;
+  top: 95px;
+  right: 0;
+  height: 100%;
+  z-index: 70;
+  width: 100px;
+  border-left: 1px solid rgba(255, 255, 255, 0.349);
+}
+#menu {
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+#menu li {
+  position: relative;
+}
 header {
   position: fixed;
   width: 100%;
-  height: 100px;
+  min-width: 1700px;
+  height: 106px;
   left: 0;
   top: 0;
   overflow: hidden;
   z-index: 9999;
   transition: 0s;
 }
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 105px;
+  width: 1830px;
+  z-index: 9999;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.295);
+}
 header.on {
   height: 400px;
   background: white;
   transition: 0.5s;
+  z-index: 9999;
 }
 header.on::after {
   content: "";
@@ -36,17 +65,19 @@ header.on::after {
   width: 100%;
   height: 1px;
   background: #ccc;
-  top: 100px;
+  top: 105px;
   left: 0;
 }
 header .head {
   position: relative;
+  padding-top: 5px;
   width: 1700px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 header .head .main {
   display: flex;
 }
@@ -61,6 +92,7 @@ header .head .main .menu > li {
 header .head .main .menu > li :hover {
   background: #002957;
 }
+
 header .head .main .menu > li > a {
   display: flex;
   justify-content: center;
@@ -68,7 +100,7 @@ header .head .main .menu > li > a {
   color: white;
   width: 197px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   height: 100px;
 }
 header .head .main .menu > li > a.on {
@@ -95,6 +127,7 @@ header .head .main .menu .sub.on {
   opacity: 1;
   height: auto;
   transition: 0.5s;
+  background: #002957;
 }
 header .head .main .menu .sub li {
   line-height: 40px;
@@ -115,48 +148,73 @@ header .head .main .menu .sub li a:hover {
   width: 155px;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-right: 10px;
 }
 .icon a {
+  padding: 2px;
   width: 64px;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: #002957;
+  cursor: pointer;
   font-size: 11px;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.719);
 }
 .icon :nth-child(2) a {
   display: flex;
   flex-wrap: wrap;
 }
+.search {
+  background: #002957;
+  border: none;
+}
+.cart {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.719);
+}
+.cart:hover {
+  background: #002957;
+}
+header.on .cart {
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+}
+header.on .cart img {
+  filter: invert(0%) sepia(99%) saturate(16%) hue-rotate(109deg)
+    brightness(102%) contrast(99%);
+}
 .icon a:hover {
   border: none;
 }
-section {
+.sec1 {
   width: 100%;
-  height: 906px;
+  height: 100%;
+  overflow: hidden;
 }
-.main_banner {
+.sec1 .main_banner {
   width: 100%;
-  height: 906px;
+  height: 970px;
   position: relative;
 }
-.swiper {
+.sec1 .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
+.sec1 .swiper-slide {
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.swiper-slide img {
+.sec1 .swiper-slide img {
   display: block;
   width: 100%;
+  height: 100%;
+}
+.sec2 {
+  background: url(../images/product_bg.jpg) no-repeat center / center;
 }
