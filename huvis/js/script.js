@@ -39,7 +39,6 @@ gnb.forEach(function (value, index) {
 $(document).ready(function () {
   // fullpage
   $("#fullpage").fullpage({
-    sectionsColor: ["#1A9C56", "#FFFCF5", "#7BAABE"],
     anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6"],
     menu: "#menu",
     scrollingSpeed: 1000,
@@ -65,16 +64,19 @@ $(document).ready(function () {
   // swiper
   var swiper = new Swiper(".sec1 .mySwiper", {
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 0,
     effect: "fade",
     loop: true,
     autoplay: {
       delay: 5000,
-      pauseOnMouseEnter: true,
     },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     // on: {
     //   slideChange: function () {
