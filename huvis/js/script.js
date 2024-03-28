@@ -26,7 +26,7 @@ function menu_out() {
   document.querySelector(".info").classList.remove("on");
 }
 gnb.forEach(function (value, index) {
-  value.onmouseover = function () {
+  value.onmouseenter = function () {
     menu_in();
   };
   value.onmouseleave = function () {
@@ -35,7 +35,6 @@ gnb.forEach(function (value, index) {
   document.querySelector(".info").onmouseenter = menu_in;
   document.querySelector(".info").onmouseleave = menu_out;
 });
-
 $(document).ready(function () {
   // fullpage
   $("#fullpage").fullpage({
@@ -116,3 +115,15 @@ $(document).ready(function () {
 //     ],
 //   });
 // });
+
+$(".ft_drop>li").mouseenter(function () {
+  $(this).children(".ft_hide").stop().slideDown(400);
+});
+$(".ft_drop>li").mouseleave(function () {
+  $(this).children(".ft_hide").stop().slideup(100);
+});
+
+$(".back").click(function () {
+  $("sec1").animate({ scrollTop: 0 }, 400);
+  return false;
+});
