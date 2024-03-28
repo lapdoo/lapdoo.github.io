@@ -6,6 +6,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Noto Sans-R";
+  src: url("../../webfonts/NotoSansKR-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "nanum";
   src: url("../../webfonts/NotoSansKR-Medium.ttf");
   font-weight: normal;
@@ -29,7 +35,6 @@ a {
   color: black;
 }
 body {
-  font-family: "nanum";
   font-size: 16px;
   font-weight: 500;
 }
@@ -439,6 +444,7 @@ header.on .cart img {
   line-height: 30px;
   font-size: 18px;
 }
+
 .sec3 {
   background: url(../images/comp_bg.jpg) no-repeat center;
 }
