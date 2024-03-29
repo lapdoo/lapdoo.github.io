@@ -32,9 +32,18 @@ gnb.forEach(function (value, index) {
   value.onmouseleave = function () {
     menu_out();
   };
-  document.querySelector(".info").onmouseenter = menu_in;
-  document.querySelector(".info").onmouseleave = menu_out;
 });
+
+$(document).ready(function () {
+  $("#gnb .dropsub").hide();
+  $("#gnb a").mouseover(function () {
+    $(".dropsub").slideDown();
+  });
+  $("#gnb a").mouseleave(function () {
+    $(".dropsub").hide();
+  });
+});
+
 $(document).ready(function () {
   // fullpage
   $("#fullpage").fullpage({
@@ -77,42 +86,27 @@ $(document).ready(function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    // on: {
-    //   slideChange: function () {
-    //     let i = this.activeIndex;
-    //     console.log(i);
-    //     $(".innerWrap .inner p").removeClass("on");
-    //     $(".innerWrap .inner").eq(i).find("p").addClass("on");
-    //   },
-    // },
+    on: {
+      slideChange: function () {
+        let i = this.activeIndex;
+        $(".main_banner .mySwiper .swiper-slide img").removeClass("on");
+        $(".main_banner .mySwiper .swiper-slide")
+          .eq(i)
+          .find("img")
+          .addClass("on");
+        $(".aniBox .sec1_Txtbox").removeClass("on");
+        $(".aniBox .sec1_Txtbox").eq(i).addClass("on");
+      },
+    },
   });
 });
 
 $(document).ready(function () {
   $(".center").slick({
-    centerMode: true,
-    centerPadding: "60px",
+    infinite: true,
     slidesToShow: 3,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "40px",
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "40px",
-          slidesToShow: 1,
-        },
-      },
-    ],
+    slidesToScroll: 1,
+    spaceBetween: 20,
   });
 });
 
@@ -124,6 +118,6 @@ $(".ft_drop>li").mouseleave(function () {
 });
 
 $(".back").click(function () {
-  $("sec1").animate({ scrollTop: 0 }, 400);
+  $(".sec1").animate({ scrollTop: 0 }, 400);
   return false;
 });
