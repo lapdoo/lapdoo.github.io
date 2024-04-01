@@ -60,7 +60,7 @@
 
 .section {
   font-size: 3vw;
-  height: 100vh;
+  height: 970px;
 }
 .sec1 {
   font-family: "Prompt";
@@ -627,7 +627,7 @@
 }
 .sec5 {
   width: 100%;
-  height: 100vh !important;
+  height: 970px;
   border: 1px solid;
 }
 .sec5 .inner {
@@ -747,39 +747,32 @@
   color: white;
   transition: 0.3s ease;
 }
-.section:last-of-type {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
+.sec6 {
   color: white;
 }
-.section:last-of-type h1 {
-  position: absolute;
-  top: 18%;
-  left: 15%;
-  width: 1450px;
-  margin: 0 auto;
+.bottom_desc {
+  width: 100%;
+  margin-left: 280px;
+  margin-top: 60px;
+  color: white;
+}
+.bottom_desc h1 {
+  width: 1100px;
   font-family: "Prompt";
   font-size: 3.125vw;
 }
-
 .bottom_txt1 {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1350px;
-  margin: a auto;
+  padding-top: 50px;
+  width: 1100px;
+  margin: 0 auto;
   font-size: 1.725rem;
 }
 
 .bottom_txt2 {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1350px;
-  margin: a auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 1100px;
+  margin: 0 auto;
   font-size: 1rem;
 }
 .main {

@@ -35,7 +35,7 @@ gnb.forEach(function (value, index) {
 });
 
 $(document).ready(function () {
-  $("#gnb .dropsub").hide();
+  $(".dropsub").hide();
   $("#gnb a").mouseover(function () {
     $(".dropsub").slideDown();
   });
@@ -110,11 +110,14 @@ $(document).ready(function () {
   });
 });
 
-$(".ft_drop>li").mouseenter(function () {
-  $(this).children(".ft_hide").stop().slideDown(400);
-});
-$(".ft_drop>li").mouseleave(function () {
-  $(this).children(".ft_hide").stop().slideup(100);
+$(document).ready(function () {
+  $(".ft_hide").hide();
+  $("ft_drop li").mouseover(function () {
+    $(".ft_hide").slideDown();
+  });
+  $("ft_drop li").mouseleave(function () {
+    $(".ft_hide").hide();
+  });
 });
 
 $(".back").click(function () {

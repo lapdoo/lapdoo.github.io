@@ -317,15 +317,9 @@ header.on .icon .cart img {
 .icon a:hover {
   border: none;
 }
-.language {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 90px;
-}
 .info {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: -80px;
   width: 80px;
   height: 21px;
@@ -352,12 +346,18 @@ header.on .info {
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(7%)
     hue-rotate(129deg) brightness(102%) contrast(104%);
 }
-#gnb > li > .dropsub {
+.dropsub {
+  position: absolute;
+  right: 30px;
+  top: 65px;
+  width: 80px;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   color: rgba(255, 255, 255, 0.788);
 }
-#gnb > li > .dropsub > li > a {
+
+.dropsub > li > a {
   color: rgba(255, 255, 255, 0.788);
 }
 
@@ -1117,8 +1117,6 @@ header.on .info {
   width: 220px;
   margin-right: 340px;
   margin-top: 30px;
-  width: 180px;
-  overflow: hidden;
 }
 
 .sec7 footer .ft_top .ft_txt3 .ft_drop > li > a {
@@ -1127,15 +1125,30 @@ header.on .info {
   color: #a8a8a8;
   align-items: center;
   font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.644);
+  padding: 10px;
 }
 .sec7 footer .ft_top .ft_txt3 .ft_drop > li > a > img {
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
 }
-.sec7 footer .ft_top .ft_txt3 .ft_drop .ft_hide li a {
+.ft_hide {
+  z-index: 999;
+  position: absolute;
+  top: 575px;
+  right: 560px;
+}
+.ft_hide li {
+  line-height: 30px;
+}
+.ft_hide li a {
   font-weight: 500;
   color: #a8a8a8;
 }
+.ft_drop li:hover .ft_hide {
+  display: block;
+}
+
 .sec7 .ft_bottom {
   position: relative;
   width: 100%;
