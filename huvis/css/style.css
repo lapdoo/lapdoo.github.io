@@ -337,8 +337,10 @@ header .head .main .menu > li:hover .sub a {
   filter: none;
 }
 .cart:hover {
+  color: white;
   background: #002957;
 }
+
 header.on .icon .cart {
   color: black;
   border: 1px solid rgba(0, 0, 0, 0.445);
@@ -381,7 +383,7 @@ header.on .info {
   right: 30px;
   top: 65px;
   width: 80px;
-  z-index: 999;
+  z-index: 10000;
   display: flex;
   flex-direction: column;
   color: rgba(255, 255, 255, 0.788);
@@ -615,10 +617,12 @@ header.on .info {
 .slick-active {
   width: 300px !important;
   height: 300px !important;
+  transition: 1s;
 }
 .slick-current {
   opacity: 1;
   width: 495px !important;
+  transition: 1s;
   color: #fff;
 }
 .slick-slide svg {
@@ -635,13 +639,22 @@ header.on .info {
 .slide_boxTxt {
   position: relative;
 }
+.tit p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 .slick-slide .slide_boxTxt h1 {
+  color: #002957;
   margin-bottom: 30px;
+  font-size: 26px;
 }
 .slick-slide .slide_boxTxt p {
-  text-overflow: ellipsis;
+  color: #727272;
   margin-bottom: 30px;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .slick-slide .slide_boxTxt svg {
   position: absolute;
@@ -649,18 +662,36 @@ header.on .info {
   height: 49px;
   top: 60px;
   right: 40px;
-  stroke: white !important;
+  stroke: #01b4e5 !important;
   fill: none;
 }
 .slick-slide .slide_boxTxt .item .cls-1 {
-  stroke: #fff !important;
+  stroke: #ffffff !important;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 8px;
 }
+.slick-active:not(.slick-current) .item .cls-1 {
+  stroke: #01b4e5 !important;
+}
 .slick-current h1 {
-  color: white;
-  font-size: 40px;
+  color: white !important;
+  font-size: 40px !important;
+}
+.slick-current p {
+  color: white !important;
+  font-size: 15px !important;
+}
+.slick-current svg:not(.item) {
+  stroke: #ffffff !important;
+  fill: none;
+}
+
+.slick-current .item .cls-1 {
+  stroke: #ffffff !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 8px;
 }
 .slick-current .slide_boxTxt {
   width: 495px;
@@ -730,33 +761,40 @@ header.on .info {
   display: block;
 }
 .slick-prev {
+  opacity: 0.4;
+  transition: 0.5s;
   z-index: 999;
   margin-right: 30px;
   width: 60px;
   padding: 30px 0;
   border: 1px solid white;
   border-radius: 50%;
-  background: url(../icon_img/prev_icon.png) no-repeat center;
+  /* background: url(../icon_img/prev_icon.png) no-repeat center; */
 }
 .slick-prev::before {
-  display: none;
+  position: absolute;
+  top: 15px;
+  content: url(../icon_img/prev_icon.png);
 }
-
 .slick-prev:hover,
 .slick-next:hover {
+  opacity: 1;
   color: white;
   outline: white;
   background: #01b4e5;
 }
 .slick-next {
+  opacity: 0.4;
+  transition: 0.5s;
   width: 60px;
   padding: 30px 0;
   border: 1px solid white;
   border-radius: 50%;
-  background: url(../icon_img/next_icon.png) no-repeat center;
 }
 .slick-next::before {
-  display: none;
+  position: absolute;
+  top: 15px;
+  content: url(../icon_img/next_icon.png);
 }
 
 .sec3 {
@@ -1256,12 +1294,12 @@ header.on .info {
   width: 220px;
   margin-right: 340px;
   margin-top: 30px;
-  overflow: hidden;
   z-index: 999;
 }
 
 .sec7 footer .ft_top .ft_txt3 .ft_drop > li > a {
   display: flex;
+  font-size: 14px;
   justify-content: space-between;
   color: #a8a8a8;
   align-items: center;
@@ -1274,17 +1312,31 @@ header.on .info {
   height: 4px;
 }
 .ft_hide {
-  z-index: 999;
+  z-index: 10000;
   position: absolute;
-  top: 575px;
-  right: 560px;
+  top: 40px;
+  right: 0px;
 }
 .ft_hide li {
-  line-height: 30px;
+  align-items: center;
+  width: 218px;
+  padding: 7px 0;
+  background: #15181b;
+  transition: 0.5s;
+}
+.ft_hide li:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.644);
 }
 .ft_hide li a {
-  font-weight: 500;
-  color: #a8a8a8;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.ft_hide li:hover {
+  background: #01b4e5;
+}
+.ft_hide li:hover a {
 }
 .ft_drop li:hover .ft_hide {
   display: block;
@@ -1324,6 +1376,7 @@ header.on .info {
   margin: 20px;
   z-index: 9999;
   transition: 0.5s;
+  border: 1px solid rgba(143, 143, 143, 0.438);
 }
 .back span {
   cursor: pointer;
