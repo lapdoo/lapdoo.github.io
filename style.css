@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#menu {
+  position: fixed;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+#menu li {
+  display: flex;
+  height: 74px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#menu li.menuEnd {
+  display: none;
+}
+#menu li.active {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+}
+.visual {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.visual .mySwiper img {
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+}
+.visual .mySwiper img.on {
+  transform: scale(1);
+  transition: 2.5s;
+}
+.txtBox {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  color: #fff;
+  overflow: hidden;
+}
+.txtBox .inner {
+  position: relative;
+  left: -100%;
+  display: inline-block;
+  width: 100%;
+  /* transition: 1.5s; */
+}
+.txtBox .inner.on {
+  animation: txtAni 4.5s 0.5s forwards;
+}
+@keyframes txtAni {
+  0% {
+    left: -100%;
+  }
+  60% {
+    left: 0;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.txtBox dl dt {
+  line-height: 1.1;
+  font-size: 80px;
+  font-weight: 700;
+}
+.txtBox dl dt em {
+  font-style: normal;
+}
+.txtBox dl dt span {
+  color: #01b4e5;
+}
